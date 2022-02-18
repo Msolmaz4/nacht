@@ -1,0 +1,16 @@
+.card-map{
+    height: 80px;
+    width: auto;
+    padding: 3px;
+  margin-left: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cxz{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+  }
