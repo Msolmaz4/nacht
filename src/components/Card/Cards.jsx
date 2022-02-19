@@ -41,10 +41,12 @@ const Cards = () => {
                   <Card.Text> {e.description}</Card.Text>
                   <div className="zxc">
                     <Card.Text className="cxz"> {e.price}$</Card.Text>
-                    <AiOutlineShoppingCart className="zxc" />
+                    <a href='#' > <AiOutlineShoppingCart
+                   
+                    className="zxc" /></a>
                   </div>
 
-                  <Button variant="primary">ADD</Button>
+                  <Button className="button"  variant="primary">ADD</Button>
                 </Card.Body>
               </Card>
             </div>

@@ -13,4 +13,12 @@
     justify-content: center;
     flex-direction: row;
     text-align: center;
+
   }
+.zxc a{
+background-attachment: fixed;
+}
+.button{
+  margin-top: 1rem;
+  
+}
