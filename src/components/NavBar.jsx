@@ -17,7 +17,7 @@ const NavBar=()=>{
             <Nav.Link href="#pricing">Favorites</Nav.Link>
             <Nav.Link href="#pricing">Cart</Nav.Link>
             <Nav.Link href={`./login`} >Login</Nav.Link>
-            <Nav.Link href="#pricing">Register</Nav.Link>
+            <Nav.Link href={`./register`}>Register</Nav.Link>
             </Navbar.Collapse>
          </Navbar.Collapse>
        

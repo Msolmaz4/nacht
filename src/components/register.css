@@ -1,0 +1,22 @@
+
+.bild{
+    width: 50%;
+    display: flex;
+}
+.login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.gehen{
+
+    margin-right: 300px;
+    padding-top: 80px;
+
+}
+.label1{
+    margin-right: 14px;
+}
+.btnl{
+    margin-top: 15px;
+}

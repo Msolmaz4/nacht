@@ -5,13 +5,13 @@ import { useState } from 'react'
 
 export default function Login() {
   const naviga = useNavigate() 
-  const [pasword,setPasword] =useState()
-  const [email,setEmail] = useState()
+  const [password,setPassword] =useState('')
+  const [email,setEmail] = useState('')
   const [pass,setPass] =useState("alert alert-danger d-none")
 
   const handleSubmit=(e)=>{
     e.preventDefault()
-    if (email && pasword){
+    if (email && password){
     naviga('/')
   }
   else{
@@ -40,6 +40,7 @@ export default function Login() {
             type='email'
             className="form-control"
             id='email'
+          
             placeholder="enter your email adress..."
             onClick={(e)=>setEmail(e.target.value)}
             />
@@ -49,10 +50,11 @@ export default function Login() {
               </label>
               <input
               type='password'
+      
               id='password'
               className='form-control'
               placeholder="enter your Password..."
-              onClick={(e)=>setPasword(e.target.value)}
+              onClick={(e)=>setPassword(e.target.value)}
 
               />
               <div className='btnl'>
