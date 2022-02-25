@@ -3,7 +3,7 @@ import axios from "axios";
 import { Card, Button } from "react-bootstrap";
 import "./cards.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-
+import { MdOutlineFavoriteBorder } from 'react-icons/md'
 const Cards = () => {
   const [sache, setSache] = useState([]);
 
@@ -41,12 +41,14 @@ const Cards = () => {
                   <Card.Text> {e.description}</Card.Text>
                   <div className="zxc">
                     <Card.Text className="cxz"> {e.price}$</Card.Text>
+                    < MdOutlineFavoriteBorder/>
                     <a href='#' > <AiOutlineShoppingCart
                    
                     className="zxc" /></a>
+                   
                   </div>
 
-                  <Button className="button"  variant="primary">ADD</Button>
+                 
                 </Card.Body>
               </Card>
             </div>
