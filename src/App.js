@@ -7,10 +7,13 @@ import Login from "./components/Login";
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import Register from "./components/Register";
+import { AuthContextProvider} from './context/AuthContex'
+
 function App() {
   return (
     <div className="App">
       <Router>
+      <AuthContextProvider>
         <NavBar />
 
         <Routes>
@@ -18,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path='/register' element={<Register />}/>
         </Routes>
+        </AuthContextProvider>
       </Router>
     </div>
   );

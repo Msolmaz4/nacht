@@ -1,9 +1,29 @@
 
 import './register.css'
 
-import React from 'react'
+import React ,{ useContext, useState } from 'react'
+import AuthContext from '../context/AuthContex'
+
+
+
+
 export default function Login() {
- 
+
+
+  const { handleCredentials,credentials} = useContext(AuthContext)
+  
+  const [ firstName,setFirstName] = useState('')
+  const [lastName,setLastName] = useState('')
+  const [email, setEmail]= useState('')
+  const [ password,setPassword]= useState('')
+
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  handleCredentials( firstName,lastName,email,password)
+}
+
+console.log(credentials)
  
 
   return (
@@ -14,7 +34,7 @@ export default function Login() {
       <div >
      
         <h2 className='gehen' > REGISTER</h2>
-        <form className='loginform' >
+        <form className='loginform' onSubmit={(e)=>handleSubmit(e)} >
           <div className='label1'>
             <label for='first-name'className="form-label display-2">First Name</label>
             <input 
@@ -23,7 +43,7 @@ export default function Login() {
             id='first'
           
             placeholder="enter your Name"
-            //onClick={(e)=>setEmail(e.target.value)}
+            onClick={(e)=>setFirstName(e.target.value)}
             />
             <div>
             <label for='last-name'className="form-label display-2">Last Name</label>
@@ -33,7 +53,7 @@ export default function Login() {
             id='last'
           
             placeholder="enter Last Name"
-            //onClick={(e)=>setEmail(e.target.value)}
+            onClick={(e)=>setLastName(e.target.value)}
             />
             <label for='last-name'className="form-label display-2">emaıl</label>
             <input 
@@ -42,7 +62,7 @@ export default function Login() {
             id='email'
           
             placeholder="enter Email"
-            //onClick={(e)=>setEmail(e.target.value)}
+            onClick={(e)=>setEmail(e.target.value)}
             />
 <label for='password'className="form-label display-2">Password</label>
             <input 
@@ -51,7 +71,7 @@ export default function Login() {
             id='password'
           
             placeholder="password"
-            //onClick={(e)=>setEmail(e.target.value)}
+            onClick={(e)=>setPassword(e.target.value)}
             />
 
 
