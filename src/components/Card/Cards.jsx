@@ -1,25 +1,19 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Card, Button } from "react-bootstrap";
+import React from "react";
+
+import { Card } from "react-bootstrap";
 import "./cards.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdOutlineFavoriteBorder } from 'react-icons/md'
+import { useContext } from "react";
+import AuthContext from "../../context/AuthContex";
+
 const Cards = () => {
-  const [sache, setSache] = useState([]);
 
-  const FetchCard = async () => {
-    const res = await axios
-      .get("https://fakestoreapi.com/products")
-      .catch((err) => {
-        console.log("Err: ", err);
-      });
-    console.log(res.data);
-    setSache(res.data);
-  };
+ const  {sache,filter} =useContext(AuthContext)
 
-  useEffect(() => {
-    FetchCard();
-  }, []);
+
+ //  {sache.map((e) => { once genel gormek icin sonra filter oxzelligi
+
 
   return (
     <React.Fragment>

@@ -1,87 +1,76 @@
+import "./Login.css";
 
-import './Login.css'
-import {useNavigate} from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useContext } from "react";
+import AuthContext from "../context/AuthContex";
 
 export default function Login() {
-  const naviga = useNavigate() 
-  const [password,setPassword] =useState('')
-  const [email,setEmail] = useState('')
-  const [pass,setPass] =useState("alert alert-danger d-none")
+  const { handleLogin, loginError } = useContext(AuthContext);
 
-  const handleSubmit=(e)=>{
-    e.preventDefault()
-    if (email && password){
-    naviga('/')
-  }
-  else{
-    setPass("alert alert-danger")
-  }
-  
-}
- 
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  //const [pass,setPass] =useState(" d-none")
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email && password) {
+      handleLogin(email, password);
+    } else {
+      //setPass("alert alert-danger")
+    }
+  };
 
   return (
-    <div className='login'>
-      <div className='bild'>
-      <img src="https://picsum.photos/800/800" alt='resim'/>
+    <div className="login">
+      <div className="bild">
+        <img src="https://picsum.photos/800/800" alt="resim" />
       </div>
-      <div >
-      <div className={pass} role="alert">
-  A simple secondary alert—check it out!
-</div>
-        <h2 className='gehen' > Login</h2>
-        <form className='loginform' onSubmit={handleSubmit}>
-          <div className='label1'>
-            <label for='email'className="form-label display-2">
+      <div>
+        <div
+          className={
+            loginError ? "alert alert-danger " : "alert alert-danger d-none"
+          }
+          role="alert"
+        >
+          A simple secondary alert—check it out!
+        </div>
+        <h2 className="gehen"> Login</h2>
+        <form className="loginform">
+          <div className="label1">
+            <label for="email" className="form-label display-2">
               Email
             </label>
-            <input 
-            type='email'
-            className="form-control"
-            id='email'
-          
-            placeholder="enter your email adress..."
-            onClick={(e)=>setEmail(e.target.value)}
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              placeholder="enter your email adress..."
+              onClick={(e) => setEmail(e.target.value)}
             />
+            </div>
             <div>
-              <label for='password' className='form-label display2'>
+              <label for="password" className="form-label display2">
                 Pasword
               </label>
               <input
-              type='password'
-      
-              id='password'
-              className='form-control'
-              placeholder="enter your Password..."
-              onClick={(e)=>setPassword(e.target.value)}
-
+                type="password"
+                id="password"
+                className="form-control"
+                placeholder="enter your Password..."
+                onClick={(e) => setPassword(e.target.value)}
               />
-              <div className='btnl'>
-                <input 
-                type='submit'
-                value='LOGIN'
-                className="btn btn-primary form-control"
+              </div>
+              <div className="btnl">
+                <input
+                  type="submit"
+                  value="LOGIN"
+                  className="btn btn-primary form-control"
+                  onSubmit={(e) => handleSubmit(e)}
                 />
               </div>
-              
-            </div>
-
-
-          </div>
-       
-  
-
-
-
-
-
-
-
+            
+          
         </form>
-
       </div>
-
     </div>
-  )
+  );
 }
