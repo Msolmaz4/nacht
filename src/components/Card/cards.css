@@ -8,7 +8,9 @@
     justify-content: center;
   }
   .cxz{
-    margin: auto;
+ 
+    width: 80px;
+    height: 30px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -27,4 +29,29 @@ margin-left: 70px;
  height: 140px;
 
 
+}
+.yaz{
+  display: flex;
+  text-align: center;
+}
+.price{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+
+}
+.fiya{
+  width: 80px;
+  height: 30px;
+  padding-top: 3px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+  margin-right: 20px;
+  background-color: blue;
+  color:aliceblue
+}
+.fiya huvor{
+  cursor: pointer;
 }

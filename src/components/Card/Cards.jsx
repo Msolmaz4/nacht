@@ -26,27 +26,24 @@ const Cards = () => {
               <Card
                 style={{
                   width: "18rem",
-                  height: "auto",
+                  height: "25rem",
                   margin: "2rem",
                   padding: "1rem",
                 }}
               >
                 <Card.Img variant="top" src={e.image} className='imag'/>
                 <Card.Body>
-                  <Card.Title>{e.title}</Card.Title>
+                  <Card.Title className="yaz">{e.title}</Card.Title>
                  
-                  <div className="zxc">
+                 <div className="price">
+                 <Card.Text className="fiya"> Price</Card.Text>
                     <Card.Text className="cxz"> {e.price}$</Card.Text>
-                
-                    < MdOutlineFavoriteBorder/>
-                    <Link to={`details/${e.id}`}>a</Link>
-                    <AiOutlineShoppingCart
-                    className="zxc" />
-                    
-                     <AiOutlineShoppingCart
-                    className="zxc" />
+                 </div>
                    
-                  </div>
+                
+                   
+                   
+                
 
                  
                 </Card.Body>
