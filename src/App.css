@@ -33,7 +33,7 @@ text-align: center;
 
 }
 .acor{
-  border: 2px solid blue;
+ 
   text-align: center;
   margin-top: 50px;
   width: 100%;
@@ -45,7 +45,11 @@ text-align: center;
   text-align: center;
 }
 .detailpri{
-  border: solid 2px red;
+ 
   margin-top: 40px;
 }
+.sele{
+  height: 120px;
+  
 
+}

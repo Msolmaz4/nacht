@@ -54,6 +54,11 @@ export const AuthContextProvider = (props) => {
     console.log(search);
   };
 
+
+
+
+
+
   return (
     <AuthContext.Provider
       value={{
@@ -65,6 +70,7 @@ export const AuthContextProvider = (props) => {
         setSearch: setSearch,
         ara: ara,
         sache: sache,
+       
       }}
     >
       {props.children}
