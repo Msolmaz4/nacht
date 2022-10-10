@@ -63,13 +63,6 @@ const Cards = () => {
                   <Link to={`details/${e.id}`}>
                   <button className="detail" >DETAIL</button></Link>
                 </div>
-                
-               
-               
-
-
-               
-                 
                 </Card.Body>
               </Card>
             </div>
