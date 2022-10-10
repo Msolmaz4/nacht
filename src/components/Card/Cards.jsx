@@ -2,13 +2,31 @@ import React from "react";
 
 import { Card } from "react-bootstrap";
 import "./cards.css";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { MdOutlineFavoriteBorder } from 'react-icons/md'
+import {MdFavorite} from 'react-icons/md'
+import { MdFavoriteBorder } from 'react-icons/md'
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContex";
 import {Link} from 'react-router-dom'
+import { useState } from "react";
+
 
 const Cards = () => {
+  const [a, setA] = useState(0);
+  const [ilk, setIlk] = useState(<MdFavoriteBorder/>);
+
+  const handle7 = () => {
+    if (a === 0) {
+      setA(1);
+      setIlk(< MdFavorite/>);
+    }
+    if (a === 1) {
+      setA(0);
+      setIlk(<MdFavoriteBorder />);
+    }
+  };
+
+
+
 
  const  {sache,filter} =useContext(AuthContext)
 
@@ -21,12 +39,12 @@ const Cards = () => {
       <div className="card-map">
         {sache.slice(0,12).map((e) => {
           return (
-            <div>
+            <div key={e.id}>
 
               <Card
                 style={{
                   width: "18rem",
-                  height: "25rem",
+                  height: "27rem",
                   margin: "2rem",
                   padding: "1rem",
                 }}
@@ -39,12 +57,18 @@ const Cards = () => {
                  <Card.Text className="fiya"> Price</Card.Text>
                     <Card.Text className="cxz"> {e.price}$</Card.Text>
                  </div>
-                   
+              
+                <div className="fav">
+                  {ilk}
+                  <Link to={`details/${e.id}`}>
+                  <button className="detail" >DETAIL</button></Link>
+                </div>
                 
-                   
-                   
-                
+               
+               
 
+
+               
                  
                 </Card.Body>
               </Card>

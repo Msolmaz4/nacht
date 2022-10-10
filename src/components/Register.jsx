@@ -55,7 +55,7 @@ export default function Login() {
             />
           </div>
           <label for="email" className="form-label display-2">
-            emaıl
+            Email
           </label>
           <input
             type="email"

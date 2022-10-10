@@ -8,12 +8,14 @@
     justify-content: center;
   }
   .cxz{
- 
+   
     width: 80px;
     height: 30px;
     display: flex;
     justify-content: center;
     text-align: center;
+    font-size: x-large;
+  
 
   }
 .zxc {
@@ -31,18 +33,24 @@ margin-left: 70px;
 
 }
 .yaz{
+
   display: flex;
   text-align: center;
+
+
 }
 .price{
+
   margin-top: 40px;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 
 }
 .fiya{
   width: 80px;
   height: 30px;
+  margin-top: 50px;
   padding-top: 3px;
   display: flex;
   justify-content: center;
@@ -50,8 +58,20 @@ margin-left: 70px;
   border: 1px solid black;
   margin-right: 20px;
   background-color: blue;
-  color:aliceblue
+  color:aliceblue;
+  border-radius: 20px;
 }
 .fiya huvor{
   cursor: pointer;
+}
+.fav{
+  display: flex;
+  justify-content: space-around;
+}
+.detail{
+  width: 90px;
+  height: 30px;
+  background-color:blue;
+  color: white;
+  border-radius: 10px;
 }
