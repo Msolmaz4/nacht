@@ -2,7 +2,7 @@
     height: 80px;
     width: auto;
     padding: 3px;
-  margin-left: 3px;
+    margin-left: 3px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -11,15 +11,20 @@
     margin: auto;
     display: flex;
     justify-content: center;
-    flex-direction: row;
     text-align: center;
 
   }
-.zxc a{
+.zxc {
 background-attachment: fixed;
 margin-left: 70px;
 }
 .button{
   margin-top: 1rem;
   
+}
+.imag{
+ width: 170px;
+ height: 140px;
+
+
 }
