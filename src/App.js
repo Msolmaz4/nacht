@@ -9,6 +9,7 @@ import Main from "./components/Main";
 import Register from "./components/Register";
 import { AuthContextProvider} from './context/AuthContex'
 import Details from "./components/Details";
+import Favori from "./components/Favori";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path='/register' element={<Register/>}/>
           <Route path='/details/:id' element={<Details/>}/>
+          <Route path='/favori' element={<Favori/>}/>
         </Routes>
         </AuthContextProvider>
       </Router>

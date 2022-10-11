@@ -14,7 +14,7 @@ const NavBar=()=>{
         <Navbar.Collapse id="responsive-navbar-nav">
           <Navbar.Collapse className="justify-content-end">
             <Nav.Link  href={`/`}>Home</Nav.Link>
-            <Nav.Link href="#pricing">Favorites</Nav.Link>
+            <Nav.Link href={`/favori`}>Favorites</Nav.Link>
             <Nav.Link href="#pricing">Cart</Nav.Link>
             <Nav.Link href={`/login`} >Login</Nav.Link>
             <Nav.Link href={`/register`}>Register</Nav.Link>
