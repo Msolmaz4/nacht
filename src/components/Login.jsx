@@ -2,6 +2,7 @@ import "./Login.css";
 
 import { useState, useContext } from "react";
 import AuthContext from "../context/AuthContex";
+import { useEffect } from "react";
 
 export default function Login() {
   const { handleLogin, loginError } = useContext(AuthContext);
@@ -12,13 +13,15 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email && password) {
+ 
       handleLogin(email, password);
-    } else {
-      //setPass("alert alert-danger")
-    }
+      setEmail('')
+      setPassword('')
+ 
   };
-
+useEffect(()=>{
+handleLogin()
+},[password,email])
   return (
     <div className="login">
       <div className="bild">
@@ -42,7 +45,7 @@ export default function Login() {
             <input
               type="email"
               className="form-control"
-              id="email"
+              
               placeholder="enter your email adress..."
               onClick={(e) => setEmail(e.target.value)}
             />
@@ -53,7 +56,7 @@ export default function Login() {
               </label>
               <input
                 type="password"
-                id="password"
+                
                 className="form-control"
                 placeholder="enter your Password..."
                 onClick={(e) => setPassword(e.target.value)}

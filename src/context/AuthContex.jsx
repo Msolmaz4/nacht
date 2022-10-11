@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {auth} from '../auth/fire-base'
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut   } from "firebase/auth";
 
 import { useNavigate } from "react-router";
 
 const AuthContext = React.createContext();
 
 export const AuthContextProvider = (props) => {
-  const [search, setSearch] = useState("");
-  const [sache, setSache] = useState([]);
+
+  const [firstName, setFirstName] = useState("");
+  const [search,setSearch] = useState("");
+  const [sache,setSache] = useState([]);
   const navi = useNavigate();
+  const [log,setLog] =useState(false)
   const [loginError, setLoginError] = useState(false);
   const [credentials, setCredentials] = useState({
     firstName: "",
@@ -17,23 +22,44 @@ export const AuthContextProvider = (props) => {
     password: "",
   });
 
-  const handleCredentials = (firstName, lastName, email, password) => {
-    setCredentials({
+  const handleCredentials = (email, password) => {
+    console.log('aaaaaaaaa')
+   /**setCredentials({
       firstName: firstName,
       lastName: lastName,
       email: email,
       password: password,
     });
+    *  */ 
+    createUserWithEmailAndPassword (auth, email, password)
+    navi('/login')
+
+    
+
   };
 
   const handleLogin = (email, password) => {
-    if (credentials.email === email && credentials.password === password) {
+    console.log('loginde',email,password)
+    /**
+     * if (credentials.email === email && credentials.password === password) {
       setLoginError(false);
       navi("/");
     } else {
       setLoginError(true);
     }
+     */
+    
+    signInWithEmailAndPassword(auth, email, password)
+
+  navi('/')
+  setLog(true)
+
   };
+
+   const logout =()=>{
+    signOut(auth)
+    navi('/')
+   }
 
   const FetchCard = async () => {
     const res = await axios
@@ -70,6 +96,10 @@ export const AuthContextProvider = (props) => {
         setSearch: setSearch,
         ara: ara,
         sache: sache,
+        log:log,
+        setFirstName,
+        logout
+
        
       }}
     >

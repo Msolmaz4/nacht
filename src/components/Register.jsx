@@ -2,25 +2,29 @@ import "./register.css";
 
 import React, { useContext, useState } from "react";
 import AuthContext from "../context/AuthContex";
+import { useEffect } from "react";
 
-export default function Login() {
-  const { handleCredentials, credentials } = useContext(AuthContext);
+export default function Register() {
+  const { handleCredentials, credentials,setFirstName } = useContext(AuthContext);
 
-  const [firstName, setFirstName] = useState("");
+
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleCredentials(firstName, lastName, email, password);
+    console.log('refggg',email,password)
+    handleCredentials(email, password);
     //setFirstName("");
     //setLastName("");
-   // setEmail("");
-    //setPassword("");
+    setEmail("");
+    setPassword("");
   };
 
-  console.log(credentials);
+useEffect(()=>{
+  
+},[email])
  
   return (
     <div className="login">
