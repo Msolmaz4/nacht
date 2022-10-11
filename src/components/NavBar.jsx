@@ -22,10 +22,13 @@ const NavBar=()=>{
 
             {
               log ? <>
-               <Nav.Link href={`/login`} >Login</Nav.Link>
-               <Nav.Link href={`/register`}>Register</Nav.Link>
-              </>:
                <Button variant="danger" onClick={logout}>Logout</Button>
+               
+              </>:<>
+              <Nav.Link href={`/login`} >Login</Nav.Link>
+              <Nav.Link href={`/register`}>Register</Nav.Link>
+              </>
+              
             }
            
             </Navbar.Collapse>

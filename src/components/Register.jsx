@@ -24,7 +24,7 @@ export default function Register() {
 
 useEffect(()=>{
   
-},[email])
+},[email,password])
  
   return (
     <div className="login">

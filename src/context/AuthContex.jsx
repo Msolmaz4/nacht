@@ -22,8 +22,8 @@ export const AuthContextProvider = (props) => {
     password: "",
   });
 
-  const handleCredentials = (email, password) => {
-    console.log('aaaaaaaaa')
+  const handleCredentials =  (email, password) => {
+    console.log('aaaaaaaaa',email,password)
    /**setCredentials({
       firstName: firstName,
       lastName: lastName,
@@ -32,13 +32,13 @@ export const AuthContextProvider = (props) => {
     });
     *  */ 
     createUserWithEmailAndPassword (auth, email, password)
-    navi('/login')
+    
 
     
 
   };
 
-  const handleLogin = (email, password) => {
+  const handleLogin =  (email, password) => {
     console.log('loginde',email,password)
     /**
      * if (credentials.email === email && credentials.password === password) {
@@ -48,16 +48,19 @@ export const AuthContextProvider = (props) => {
       setLoginError(true);
     }
      */
-    
-    signInWithEmailAndPassword(auth, email, password)
 
-  navi('/')
-  setLog(true)
+
+     signInWithEmailAndPassword(auth, email, password)
+     
+    
+
+  
 
   };
 
    const logout =()=>{
     signOut(auth)
+    setLog(false)
     navi('/')
    }
 
